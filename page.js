@@ -624,7 +624,7 @@
   page.sameOrigin = sameOrigin;
 
 }).call(this,require('_process'))
-},{"_process":2,"path-to-regexp":3}],2:[function(require,module,exports){
+},{"_process":2,"path-to-regexp":4}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -713,6 +713,11 @@ process.chdir = function (dir) {
 };
 
 },{}],3:[function(require,module,exports){
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+},{}],4:[function(require,module,exports){
 var isarray = require('isarray')
 
 /**
@@ -1104,10 +1109,5 @@ function pathToRegexp (path, keys, options) {
   return stringToRegexp(path, keys, options)
 }
 
-},{"isarray":4}],4:[function(require,module,exports){
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-},{}]},{},[1])(1)
+},{"isarray":3}]},{},[1])(1)
 });
